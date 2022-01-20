@@ -39,14 +39,7 @@ def on_starting(server):
                                 "thumb": item_filme['thumb'] }
 
 
-                    # filme = Filme(titulo=item_filme['titulo'],
-                    #             resumo=item_filme['resumo'],
-                    #             duracao=item_filme['duracao'],
-                    #             lancamento=item_filme['lancamento'],
-                    #             categoria=item_filme['categoria'],
-                    #             elenco=item_filme['elenco'],
-                    #             slide=item_filme['slide'],
-                    #             thumb=item_filme['thumb'])
+                 
                     
                     collection.insert_one(filme)
                     
