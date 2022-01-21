@@ -56,7 +56,7 @@ spec:
     spec:
       containers:
       - name: web
-        image: therafs/rotten-potatoes:v1
+        image: therafs/rotten-potatoes:v3
         ports:
         - containerPort: 5000
         env:
