@@ -2,12 +2,12 @@ FROM python:3.8-slim-buster
 
 WORKDIR /app
 
-COPY requirements.txt /app/
+COPY requirements.txt .
 
-RUN pip3 install -r requirements.txt
+RUN python -m pip install -r requirements.txt
 
-COPY . . 
+COPY . /app
 
-EXPOSE 3000
+EXPOSE 5000
 
-CMD [ "python3", "-m" , "flask", "run", "--host=0.0.0.0:3000", "-c", "config.py", "app:app" ]
+CMD [ "gunicorn", "--workers=3" , "--bind", "0.0.0.0:5000", "-c", "config.py", "app:app" ]
