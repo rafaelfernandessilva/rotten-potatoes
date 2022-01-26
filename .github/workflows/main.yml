@@ -16,15 +16,7 @@ jobs:
           username: ${{ secrets.DOCKER_USER }}
           password: ${{ secrets.DOCKER_PASSWORD }}
       
-      - name: Teste 
-        uses: jerray/publish-docker-action@master
-        with:
-          username: ${{ secrets.DOCKER_USER }}
-          password: ${{ secrets.DOCKER_PASSWORD }}
-          registry: docker.pkg.github.com
-          repository: therafs/rotten-potatoes
-          auto_tag: true
-
+     
       - name: Build and push Docker images
         uses: docker/build-push-action@v2.8.0
         with:
