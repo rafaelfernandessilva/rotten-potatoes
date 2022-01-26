@@ -25,7 +25,7 @@ jobs:
 
           
         
-      - name: Run a multi-line script
+      - name: Teste Workflow
         run: |
-          echo Add other actions to build,
-          echo test, and deploy your project.
+          echo Teste Workflow,
+          
