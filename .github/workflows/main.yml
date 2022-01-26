@@ -22,7 +22,9 @@ jobs:
         with:
           context: ./src
           push: true
-          tags: therafs/rotten-potatoes:${{ github.run_number }}
+          tags: |
+            therafs/rotten-potatoes:${{ github.run_number }}
+            therafs/rotten-potatoes:latest
           
           
       
