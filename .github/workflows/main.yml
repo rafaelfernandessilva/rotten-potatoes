@@ -29,8 +29,8 @@ jobs:
         with:
           context: ./src
           push: true
-          tags: therafs/rotten-potatoes:latest
-          labels: ${{ steps.meta.outputs.labels }}
+          tags: therafs/rotten-potatoes:${{ steps.meta.outputs.tags }}
+          
       
 
 
