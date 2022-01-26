@@ -29,7 +29,8 @@ jobs:
         with:
           context: ./src
           push: true
-          tags: therafs/rotten-potatoes:${{ steps.meta.outputs.tags }}
+          repository: jerray/publish-docker-action
+          auto_tag: true
           
       
 
