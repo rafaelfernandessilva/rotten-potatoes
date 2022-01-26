@@ -16,12 +16,21 @@ jobs:
           username: ${{ secrets.DOCKER_USER }}
           password: ${{ secrets.DOCKER_PASSWORD }}
       
+
+      - name: Docker meta
+        id: meta
+        uses: docker/metadata-action@v3
+        with:
+          images: therafs/rotten-potatoes
+
       - name: Build and push Docker images
         uses: docker/build-push-action@v2.8.0
         with:
           context: ./src
           push: true
-          tags: therafs/rotten-potatoes:latest
+          tags: ${{ steps.meta.outputs.tags }}
+      
+
 
           
         
