@@ -29,12 +29,8 @@ jobs:
           context: ./src
           push: true
           tags: ${{ steps.meta.outputs.tags }}
+          labels: ${{ steps.meta.outputs.labels }}
       
 
 
-          
-        
-      - name: Teste Workflow
-        run: |
-          echo Teste Workflow,
           
