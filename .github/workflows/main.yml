@@ -3,7 +3,7 @@ name: CI
 on:
   push:
     branches: [ main ]
-
+  
 jobs:
   build:
     runs-on: ubuntu-latest
@@ -13,31 +13,25 @@ jobs:
       - name: Docker Login
         uses: docker/login-action@v1.12.0
         with:
-          registry: ${{ env.REGISTRY }}
           username: ${{ secrets.DOCKER_USER }}
           password: ${{ secrets.DOCKER_PASSWORD }}
       
-
-      - name: Extract metadata (tags, labels) for Docker
-        id: meta
-        uses: docker/metadata-action@v3
+      - name: Teste 
+        uses: jerray/publish-docker-action@master
         with:
-          images: therafs/rotten-potatoes
+          username: ${{ secrets.DOCKER_USER }}
+          password: ${{ secrets.DOCKER_PASSWORD }}
+          registry: docker.pkg.github.com
+          repository: therafs/rotten-potatoes
+          auto_tag: true
 
       - name: Build and push Docker images
         uses: docker/build-push-action@v2.8.0
         with:
           context: ./src
           push: true
-          repository: jerray/publish-docker-action
-          auto_tag: true
-          
-      
-
+          tags: therafs/rotten-potatoes:latest
 
           
         
-      - name: Teste Workflow
-        run: |
-          echo Teste Workflow,
           
