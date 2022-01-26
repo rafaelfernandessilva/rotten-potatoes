@@ -29,7 +29,7 @@ jobs:
         with:
           context: ./src
           push: true
-          tags: ${{ steps.meta.outputs.tags }}
+          tags: therafs/rotten-potatoes:latest
           labels: ${{ steps.meta.outputs.labels }}
       
 
