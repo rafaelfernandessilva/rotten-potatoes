@@ -30,7 +30,7 @@ jobs:
         with:
           context: ./src
           push: true
-          tags: therafs/rotten-potatoes:${{ GITHUB_ACTION	 }}
+          tags: therafs/rotten-potatoes:${{ GITHUB_ACTION	}}
 
           
         
